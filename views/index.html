@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Datestamp by Quanchifootball</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="container-fluid" id="app">
+        <div id="header">
+            <h1 class="text-center">Datestamp Microservice API</h1>
+            <p class="text-right">by QuanchiFootball</p>
+        </div>
+        <br>
+        <p>
+            This is a simple API that will take an URL date paramater and return a JSON object containing the date in both <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">Unix time</a> format and natural language string format.
+        </p>
+        <br>
+        <h4>Example</h4>
+        <p>Possible URL Inputs :</p>
+        <div class="well container blackbox">
+            <p>NATURAL LANGUAGE FORMAT:</p>
+            https://qcfb-datestamp.glitch.me/august 29, 1978
+            <br>
+            https://qcfb-datestamp.glitch.me/august291978
+            <br>
+            https://qcfb-datestamp.glitch.me/august29,1978
+            <br>
+            https://qcfb-datestamp.glitch.me/8 29 1978
+            <br>
+            <br>
+            <p>UNIX TIME FORMAT:</p>
+            https://qcfb-datestamp.glitch.me/273196800
+        </div>
+        <p>All return :</p>
+        <div class="well container blackbox">
+            {"unix":273196800,"natural":"August 29, 1978"}
+        </div>
+        <p>Spaces and commas can be omitted when using a literal month name e.g. august, may. If an incorrect date parameter is entered, the API will return the object with null values.</p>
+        <p>Note that the API only returns the natural language date and not the time. Therefore a range of Unix inputs will result in the same natural language output. </p>
+        <br>
+        <h4>Unix vs Natural Language</h4>
+        <p>Use spaces to delineate between month, day and year when using a <strong>numerical month</strong>. Failure to do so may result in an incorrect Unix time output:</p>
+        <div class="well container blackbox">
+            <span class="comment">//A natural language query for August 29, 1978 - numerical with no spaces</span>
+            <br>
+            https://qcfb-datestamp.glitch.me/8291978
+        </div>
+        <p>
+            Because the API takes in both Unix and natural language, it will take this request as a Unix input, resulting in a different date:
+        </p>
+        <div class="well container blackbox">
+            {"unix":8292017,"natural":"April 6, 1970"}
+        </div>
+        <footer>
+            <em>I wrote this API as part of FreeCodeCamp's Back-end development curriculum.<br>
+            Check out the source on my <a href="https://quanchifootball.github.io" target="_blank">Github page</a></em>
+        </footer>
+    </div>
+  </body>
+</html>

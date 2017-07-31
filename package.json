@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/quanchifootball/qcfb-timestamp/issues"
   },
-  "homepage": "https://github.com/quanchifootball/qcfb-timestamp#readme"
+  "homepage": "https://github.com/quanchifootball/qcfb-timestamp#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }
