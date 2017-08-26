@@ -15,6 +15,7 @@ body {
   color:#ffcc80;
   font-family:monospace;
   width:90%;
+  word-break: break-all;
 }
 .comment {
   color:lightgray;
